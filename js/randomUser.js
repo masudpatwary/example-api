@@ -20,19 +20,21 @@ const displayRandomUser = (user) => {
   const myData = user?.results?.[0];
 
   const img = document.getElementById("img");
-  console.log(myData.picture.large);
   img.src = myData.picture.large;
 
-  const container = document.getElementById("container");
-  const userDitals = document.createElement("div");
-  userDitals.classList.add("h1-class");
-  userDitals.innerHTML = `
-  <h1>Name: ${
-    myData.name.title + " " + myData.name.first + " " + myData.name.last
-  }</h1>
-  <h2>Address: ${myData.location.city}, Country: ${
-    myData.location.country
-  } </h2>
-  <h2>Email: ${myData.email} </h2>`;
-  container.appendChild(userDitals);
+  const name = document.getElementById("user-name");
+  name.innerText =
+    myData.name.title + " " + myData.name.first + " " + myData.name.last;
+
+  const country = document.getElementById("user-country");
+  country.innerText = myData.location.country;
+
+  const address = document.getElementById("address");
+  address.innerText = `City: ${myData.location.city},   State: ${myData.location.state} `;
+
+  const contact = document.getElementById("contact");
+  contact.innerText = myData.cell;
+
+  const email = document.getElementById("email");
+  email.innerText = myData.email;
 };

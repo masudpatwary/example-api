@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <main class="w-3/12 h-[500px] mx-auto bg-blue-50 rounded-lg p-4 mt-12">
+    <main class="md:w-3/12 h-[500px] mx-auto bg-blue-50 rounded-lg p-4 md:mt-12">
         <div id="container" class="flex flex-col items-center justify-center">
             <div class="w-[120px] h-[120px] rounded-full bg-white p-1 border-2 border-blue-200 overflow-hidden">
                 <img id="img" class="object-cover scale-110" src="/img/Masud Patwary shartr Upload.jpg" alt="">
@@ -23,14 +23,15 @@
                 User</button>
         </div>
         <div class="ps-4 leading-8">
-            <h2 class="text-center mt-10 mb-6 text-2xl"><span class="text-3xl">Name: </span>Masudur Rahman</h2>
-            <h2><span class="text-xl">Country: </span>Chandpur, Bangladesh</h2>
-            <h2><span class="text-xl">Address: </span>Chandpur, Bangladesh</h2>
-            <h2><span class="text-xl">Contact: </span>01777111073</h2>
-            <h2><span class="text-xl">Email: </span>pmmasud76@gmail.com</h2>
+            <h2 class="text-center mt-10 mb-6 text-2xl"><span class="text-3xl">Name: </span><span id="user-name">Masudur Rahman</span></h2>
+            <h2><span class="text-xl">Country: </span><span id="user-country" class="text-lg">City: Chandpur, State: Bangladesh</span></h2>
+            <h2><span class="text-xl">Address: </span><span id="address" class="text-lg">Chandpur, Bangladesh</span></h2>
+            <h2><span class="text-xl">Contact: </span><span id="contact" class="text-lg">01777111073</span></h2>
+            <h2><span class="text-xl">Email: </span><span id="email" class="text-lg">pmmasud76@gmail.com</span></h2>
 
         </div>
     </main>
+    <script src="./js/randomUser.js"></script>
 </body>
 
 </html>
