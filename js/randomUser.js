@@ -1,5 +1,5 @@
 const loadDataRandomUser = () => {
-  const url = "https://randomuser.me/api/?gender=female";
+  const url = "https://randomuser.me/api";
   fetch(url)
     .then((res) => res.json())
     .then((data) => displayRandomUser(data));
