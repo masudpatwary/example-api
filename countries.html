@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries Data</title>
+    <style>
+        body{
+            margin: 50px;
+        }
+        #countries-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .design {
+            background-color: skyblue;
+            color: white;
+            padding: 5px 10px;
+        }
+
+        .country {
+            border: 2px solid red;
+            padding: 16px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="w-11/12 mx-auto m-[25px]">
+    <h1 class="text-4xl my-4">All Countries</h1>
+    <section>
+        <div id="ditals-div">
+        </div>
+    </section>
+    <div id="countries-container">
+    </div>
+    <script src="./js/countries.js"></script>
+</body>
+
+</html>
