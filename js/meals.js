@@ -1,8 +1,19 @@
-const loadMials = (SearchText) => {
-  const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${SearchText}`;
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => loadDataDisplay(data.meals));
+// const loadMials = (SearchText) => {
+//   const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${SearchText}`;
+//   fetch(url)
+//     .then((res) => res.json())
+//     .then((data) => loadDataDisplay(data.meals));
+// };
+
+const loadMials2 = async (SearchText) => {
+  try {
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${SearchText}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    loadDataDisplay(data.meals);
+  } catch (eror) {
+    console.log(eror);
+  }
 };
 
 const loadDataDisplay = (meals) => {
@@ -38,20 +49,49 @@ const inputField = () => {
   loadMials(inputField);
 };
 
-const orderMeals = (orderItem) => {
-  console.log(orderItem);
-  const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${orderItem}`;
-  console.log(url);
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => confirmOrderDetails(data.meals[0]));
+// const orderMeals = (orderItem) => {
+//   console.log(orderItem);
+//   const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${orderItem}`;
+//   console.log(url);
+//   fetch(url)
+//     .then((res) => res.json())
+//     .then((data) => confirmOrderDetails(data.meals[0])).catch = (error) =>
+//     console.log(error);
+// };
+
+const orderMeals = async (orderItem) => {
+  try {
+    const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${orderItem}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    confirmOrderDetails(data.meals[0]);
+  } catch (eror) {
+    console.log(eror);
+  }
 };
+
 const confirmOrderDetails = (meal) => {
+  const foodImg = document.getElementById("food-img");
+  foodImg.src = meal.strMealThumb;
+
   const title = document.getElementById("mealsDetailsLabel");
   title.innerText = meal.strMeal;
 
   const body = document.getElementById("modal-body");
-  body.innerHTML = `<p class="p-2">This is supper food for our gellary of mealBD (${meal.strCategory})</p>`;
+  body.innerHTML = `<p class="p-2"> (${meal.strCategory}) Here are the biggest enterprise technology acquisitions of 2021 so
+        far, in
+        reverse chronological order.</p>`;
 };
 
-loadMials("a");
+// Alert
+
+const orderConfirmBtn = () => {
+  alert("Order SuccessFully Complete");
+  return;
+};
+const orderCencleBtn = () => {
+  alert("Are you sure Exit");
+  return;
+};
+
+loadMials2("a");
